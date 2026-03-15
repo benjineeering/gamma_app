@@ -507,13 +507,23 @@ section h3 {
 
 /* Responsive */
 @media (max-width: 480px) {
+    main {
+        padding: 12px;
+    }
+
     header h1 {
         font-size: 24px;
     }
 
     .control-section {
         grid-template-columns: 1fr 1fr 1fr;
-        gap: 6px;
+        gap: 4px;
+    }
+
+    .btn {
+        padding: 10px 4px;
+        font-size: 9px;
+        letter-spacing: 0;
     }
 
     .stat-grid {
