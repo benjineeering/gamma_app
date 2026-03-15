@@ -295,13 +295,59 @@ section h3 {
     font-family: 'Orbitron', monospace;
 }
 
-/* Settings Section */
-.settings-section {
+/* Accordion Sections */
+.accordion-section {
     background-color: var(--card-bg);
     border: 1px solid var(--border-color);
     border-radius: 2px;
-    padding: 15px;
     box-shadow: inset 0 0 20px rgba(0, 0, 0, 0.3);
+    overflow: hidden;
+}
+
+.accordion-section summary {
+    padding: 12px 15px;
+    font-size: 9px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--primary-color);
+    cursor: pointer;
+    list-style: none;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    user-select: none;
+    transition: background-color 0.2s ease;
+    font-family: 'Orbitron', monospace;
+}
+
+.accordion-section summary::-webkit-details-marker {
+    display: none;
+}
+
+.accordion-section summary::after {
+    content: '\25B6';
+    font-size: 10px;
+    transition: transform 0.2s ease;
+    color: var(--primary-color);
+}
+
+.accordion-section[open] summary::after {
+    transform: rotate(90deg);
+}
+
+.accordion-section summary:hover {
+    background-color: rgba(255, 163, 0, 0.08);
+}
+
+.accordion-section .accordion-content {
+    padding: 15px;
+    border-top: 1px solid var(--border-color);
+}
+
+/* Settings Section */
+.settings-section {
+    /* styles inherited from .accordion-section */
 }
 
 .setting-group {
@@ -420,11 +466,7 @@ section h3 {
 
 /* Info Section */
 .info-section {
-    background-color: var(--card-bg);
-    border: 1px solid var(--border-color);
-    border-radius: 2px;
-    padding: 15px;
-    box-shadow: inset 0 0 20px rgba(0, 0, 0, 0.3);
+    /* styles inherited from .accordion-section */
 }
 
 .info-section p {
@@ -474,6 +516,38 @@ section h3 {
     .reading-value {
         font-size: 24px;
     }
+}
+
+/* Scrollbar Theming */
+::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--dark-bg);
+    border-radius: 0;
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--border-color);
+    border-radius: 2px;
+    border: 1px solid var(--dark-bg);
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--primary-color);
+    box-shadow: 0 0 6px var(--glow-color);
+}
+
+::-webkit-scrollbar-corner {
+    background: var(--dark-bg);
+}
+
+/* Firefox scrollbar */
+* {
+    scrollbar-width: thin;
+    scrollbar-color: var(--border-color) var(--dark-bg);
 }
 
 /* Safe Area Support */

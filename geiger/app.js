@@ -14,7 +14,7 @@ class GeigerCounter {
 
         // Detection parameters
         this.targetFrequency = 4266; // Hz
-        this.sensitivity = 0.5; // 0-1
+        this.sensitivity = 0.3; // 0-1
         this.bandWidth = 400; // Hz total bandwidth of the bandpass filter
 
         // Counter state
