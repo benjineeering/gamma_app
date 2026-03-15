@@ -220,9 +220,10 @@ class GeigerCounter {
     // === CORE DETECTION: runs at full sample rate (~48kHz) ===
     processFilteredAudio(input) {
         // Threshold: sensitivity maps to a range
+        // After bandpass filtering, signal amplitude is small — keep thresholds low
         // High sensitivity (1.0) = low threshold; Low sensitivity (0.0) = high threshold
-        const threshold = 0.005 + (1.0 - this.sensitivity) * 0.05;
-        const hysteresisLow = threshold * 0.4;
+        const threshold = 0.0005 + (1.0 - this.sensitivity) * 0.015;
+        const hysteresisLow = threshold * 0.35;
 
         // Copy to viz buffer
         const vizLen = this.vizBuffer.length;
