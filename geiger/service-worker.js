@@ -1,5 +1,5 @@
 // Service Worker for Offline Support
-const CACHE_VERSION = 'v3';
+const CACHE_VERSION = 'v4';
 const CACHE_NAME = `geiger-counter-${CACHE_VERSION}`;
 
 // Files to cache on installation
@@ -56,67 +56,32 @@ self.addEventListener('activate', (event) => {
     );
 });
 
-// Fetch event - serve from cache, fallback to network
+// Fetch event - network first, fallback to cache (ensures fresh content)
 self.addEventListener('fetch', (event) => {
     const { request } = event;
-    const { method } = request;
 
     // Only handle GET requests
-    if (method !== 'GET') {
+    if (request.method !== 'GET') {
         return;
     }
 
-    // For navigation requests, try network first, then cache
-    if (request.mode === 'navigate') {
-        event.respondWith(
-            fetch(request)
-                .then((response) => {
-                    // Cache successful responses
-                    if (response && response.status === 200 && response.type !== 'error') {
-                        const responseClone = response.clone();
-                        caches.open(CACHE_NAME).then((cache) => {
-                            cache.put(request, responseClone);
-                        });
-                    }
-                    return response;
-                })
-                .catch(() => {
-                    // Fall back to cached version if network fails
-                    return caches.match(request)
-                        .then((response) => {
-                            return response || caches.match('/index.html');
-                        });
-                })
-        );
-        return;
-    }
-
-    // For other requests, use cache-first strategy
     event.respondWith(
-        caches.match(request)
+        fetch(request)
             .then((response) => {
-                if (response) {
-                    return response;
+                // Cache successful responses for offline use
+                if (response && response.status === 200) {
+                    const responseClone = response.clone();
+                    caches.open(CACHE_NAME).then((cache) => {
+                        cache.put(request, responseClone);
+                    });
                 }
-
-                return fetch(request)
+                return response;
+            })
+            .catch(() => {
+                // Offline: fall back to cache
+                return caches.match(request)
                     .then((response) => {
-                        // Don't cache non-successful or non-OK responses
-                        if (!response || response.status !== 200 || response.type === 'error') {
-                            return response;
-                        }
-
-                        // Clone and cache the response
-                        const responseClone = response.clone();
-                        caches.open(CACHE_NAME).then((cache) => {
-                            cache.put(request, responseClone);
-                        });
-
-                        return response;
-                    })
-                    .catch(() => {
-                        // Return offline page or error response
-                        console.warn('Fetch failed and no cache available for:', request.url);
+                        return response || (request.mode === 'navigate' ? caches.match('./index.html') : undefined);
                     });
             })
     );
