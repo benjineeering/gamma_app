@@ -26,7 +26,9 @@ theme:
     - search.suggest
     - content.code.copy
   icon:
-    logo: material/radioactive
+    logo: material/book-open-variant
+  logo: assets/logo_small.png
+  favicon: assets/logo_small.png
 
 extra_css:
   - stylesheets/custom.css

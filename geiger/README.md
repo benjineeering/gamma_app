@@ -157,4 +157,4 @@ Free to use and modify. No attribution required.
 
 **Created for radiation detection enthusiasts and researchers.**
 
-Enjoy safe detecting! ☢️
+Enjoy safe detecting!

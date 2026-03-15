@@ -35,6 +35,8 @@ jobs:
           # Copy static root files (landing page, CNAME)
           cp index.html _site/
           cp CNAME _site/ 2>/dev/null || true
+          # Copy assets
+          cp -r assets _site/assets
           # Copy Geiger PWA
           cp -r geiger _site/geiger
           # Copy built docs
