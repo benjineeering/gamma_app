@@ -55,7 +55,7 @@ nav:
   - Home: index.md
   - Products:
     - Overview: products/index.md
-  - Geiger Counter App:
+  - Pulse Counter:
     - Setup Guide: geiger-app/setup.md
   - Support:
     - Contact: support/contact.md

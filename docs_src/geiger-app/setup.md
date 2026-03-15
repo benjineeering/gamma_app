@@ -1,12 +1,12 @@
-# Geiger Counter App — Setup Guide
+# Pulse Counter — Setup Guide
 
-The NHI Geiger Counter PWA is a browser-based audio pulse counter for Geiger-Müller detectors.
+The NHI Pulse Counter is a browser-based audio pulse counter and PGD-17 companion app.
 
 ## Quick Start
 
 1. Open [app.northharbourinstruments.com/geiger/](https://app.northharbourinstruments.com/geiger/) on your phone or laptop
 2. Tap **Start Listening** and allow microphone access
-3. Place your device near the Geiger counter speaker
+3. Place your device near the detector speaker
 4. Adjust **Sensitivity** until pulses are detected reliably
 
 ## Installing on Your Phone

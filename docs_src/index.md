@@ -4,9 +4,9 @@ Welcome to the documentation for North Harbour Instruments products.
 
 ---
 
-## :material-radioactive: Geiger Counter App
+## :material-radioactive: Pulse Counter
 
-Audio-based pulse counter PWA for Geiger-Müller detectors. Counts beeps and displays CPS/CPM readings. Works offline, installable on iOS & Android.
+Audio-based pulse counter and PGD-17 companion app. Counts detector beeps and displays CPS/CPM readings. Works offline, installable on iOS & Android.
 
 [:material-arrow-right: Open App](https://app.northharbourinstruments.com/geiger/){ .md-button } &nbsp; [:material-book-open-variant: Setup Guide](geiger-app/setup.md){ .md-button .md-button--primary }
 

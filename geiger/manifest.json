@@ -1,7 +1,7 @@
 {
-  "name": "Geiger Counter - Radiation Detector",
-  "short_name": "Geiger Counter",
-  "description": "Audio-based Geiger Counter PWA for detecting radiation detector beeps. Works offline and installable on iOS and Android.",
+  "name": "Pulse Counter - PGD-17 Companion",
+  "short_name": "Pulse Counter",
+  "description": "Audio-based pulse counter for radiation detectors. PGD-17 companion app. Works offline and installable on iOS and Android.",
   "start_url": "./",
   "scope": "./",
   "display": "standalone",
