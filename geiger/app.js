@@ -146,7 +146,7 @@ class GeigerCounter {
 
             // Gain stage: amplify the filtered signal so thresholds are usable
             this.gainNode = this.audioContext.createGain();
-            this.gainNode.gain.value = 50;
+            this.gainNode.gain.value = 30;
 
             // Analyser for optional frequency visualization
             this.analyser = this.audioContext.createAnalyser();
