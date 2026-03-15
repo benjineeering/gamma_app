@@ -1,0 +1,65 @@
+{
+  "name": "Geiger Counter - Radiation Detector",
+  "short_name": "Geiger Counter",
+  "description": "Audio-based Geiger Counter PWA for detecting radiation detector beeps. Works offline and installable on iOS and Android.",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "background_color": "#46493C",
+  "theme_color": "#FFA300",
+  "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 192 192'><rect fill='%231a1a2e' width='192' height='192'/><circle cx='96' cy='96' r='50' fill='%23ff6b6b'/><text x='96' y='105' font-size='40' text-anchor='middle' fill='white' font-weight='bold'>Ω</text></svg>",
+      "sizes": "192x192",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    },
+    {
+      "src": "data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 192 192'><rect fill='%231a1a2e' width='192' height='192'/><circle cx='96' cy='96' r='50' fill='%23ff6b6b'/><text x='96' y='105' font-size='40' text-anchor='middle' fill='white' font-weight='bold'>Ω</text></svg>",
+      "sizes": "192x192",
+      "type": "image/svg+xml",
+      "purpose": "maskable"
+    },
+    {
+      "src": "data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 512 512'><rect fill='%231a1a2e' width='512' height='512'/><circle cx='256' cy='256' r='140' fill='%23ff6b6b'/><text x='256' y='280' font-size='120' text-anchor='middle' fill='white' font-weight='bold'>Ω</text></svg>",
+      "sizes": "512x512",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    },
+    {
+      "src": "data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 512 512'><rect fill='%231a1a2e' width='512' height='512'/><circle cx='256' cy='256' r='140' fill='%23ff6b6b'/><text x='256' y='280' font-size='120' text-anchor='middle' fill='white' font-weight='bold'>Ω</text></svg>",
+      "sizes": "512x512",
+      "type": "image/svg+xml",
+      "purpose": "maskable"
+    }
+  ],
+  "categories": [
+    "utilities",
+    "productivity"
+  ],
+  "screenshots": [
+    {
+      "src": "data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 540 720'><rect fill='%231a1a2e' width='540' height='720'/><circle cx='270' cy='150' r='50' fill='%23ff6b6b'/><text x='270' y='160' font-size='30' text-anchor='middle' fill='white' font-weight='bold'>Geiger Counter</text></svg>",
+      "sizes": "540x720",
+      "type": "image/svg+xml",
+      "form_factor": "narrow"
+    }
+  ],
+  "shortcuts": [
+    {
+      "name": "Start Counting",
+      "short_name": "Count",
+      "description": "Quickly start the Geiger counter",
+      "url": "/?action=start",
+      "icons": [
+        {
+          "src": "data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 192 192'><rect fill='%231a1a2e' width='192' height='192'/><circle cx='96' cy='96' r='50' fill='%23ff6b6b'/><text x='96' y='105' font-size='40' text-anchor='middle' fill='white' font-weight='bold'>▶</text></svg>",
+          "sizes": "192x192",
+          "type": "image/svg+xml"
+        }
+      ]
+    }
+  ],
+  "prefer_related_applications": false
+}
